@@ -2,8 +2,8 @@ class Cli
 {
     public static void Greeting()
     {
-        Console.WriteLine("Как тебя зовут?");
+        Console.Write("May I have your name? ");
         var input = Console.ReadLine();
-        Console.WriteLine("Добро пожаловать " + input + "!");      
+        Console.WriteLine("Hello, " + input + "!");      
     }
 }
