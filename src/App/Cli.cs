@@ -4,6 +4,6 @@ class Cli
     {
         Console.Write("May I have your name? ");
         var input = Console.ReadLine();
-        Console.WriteLine("Hello, " + input + "!");      
+        Console.WriteLine("Hello, " + input + "!");
     }
 }
