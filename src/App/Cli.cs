@@ -1,9 +1,11 @@
 class Cli
 {
-    public static void Greeting()
+    public static string Greeting()
     {
+        Console.WriteLine("Welcome to the Brain Games!");
         Console.Write("May I have your name? ");
-        var input = Console.ReadLine();
+        string input = Console.ReadLine() ?? "";
         Console.WriteLine("Hello, " + input + "!");
+        return input;
     }
 }
