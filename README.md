@@ -40,3 +40,8 @@ cd c-sharp-project-431
 Пример работы игры "Проверка на чётность":
 
 ![alt text](screenshots/image.png)
+
+
+Пример работы игры "Калькулятор":
+
+![alt text](screenshots/calculator.png)

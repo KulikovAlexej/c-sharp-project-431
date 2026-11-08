@@ -1,7 +1,5 @@
-class EvenGame
+class EvenGame:IGame
 {
-    private const int winStreakLength = 3;
-
     private Random generator = new Random();
 
     private int GetRandomNumber()
@@ -14,31 +12,7 @@ class EvenGame
         return number % 2 == 0;
     }
 
-    public void Start()
-    {
-        string name = Cli.Greeting();
-        int count = 0;
-
-        Console.WriteLine("Answer 'yes' if the number is even, otherwise answer 'no'.");
-
-        while (count < winStreakLength)
-        {
-            bool isSuccess = this.AskQuestion();
-            if (isSuccess)
-            {
-                count++;
-            } else
-            {
-                Console.WriteLine($"Let's try again, {name}!");
-                return;
-            }
-        }
-
-        Console.WriteLine($"Congratulations, {name}!");
-
-    }
-
-    private bool AskQuestion()
+    public bool AskQuestion()
     {
         int number = this.GetRandomNumber();
         bool isEven = IsEven(number);
@@ -58,5 +32,10 @@ class EvenGame
             return false;
         }
 
+    }
+
+    public string GetGameRules()
+    {
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 }

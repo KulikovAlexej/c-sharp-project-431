@@ -6,6 +6,7 @@
 
         Console.WriteLine("1 - Greet");
         Console.WriteLine("2 - Even");
+        Console.WriteLine("3 - Calculator");
         Console.WriteLine("0 - Exit");
         Console.Write("Your choice: ");
         string input = Console.ReadLine() ?? "";
@@ -13,16 +14,20 @@
         switch (input)
         {
             case "0":
-                break;
+                return;
 
             case "1":
                 Cli.Greeting();
                 break;
 
             case "2":
-                Console.WriteLine("Even Game");
-                EvenGame game = new EvenGame();
-                game.Start();
+                EvenGame evenGame = new EvenGame();
+                Engine.StartGameLoop(evenGame);
+                break;
+
+            case "3":
+                CalculatorGame calculatorGame = new CalculatorGame();
+                Engine.StartGameLoop(calculatorGame);
                 break;
 
             default:
