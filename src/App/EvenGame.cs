@@ -1,12 +1,10 @@
 class EvenGame
 {
-    private int count = 0;
-
-    private int winStreakLength = 3;
+    private const int winStreakLength = 3;
 
     private Random generator = new Random();
 
-    private int getRandomNumber()
+    private int GetRandomNumber()
     {
         return this.generator.Next(1, 21);
     }
@@ -19,32 +17,30 @@ class EvenGame
     public void Start()
     {
         string name = Cli.Greeting();
+        int count = 0;
 
         Console.WriteLine("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        while (this.count < this.winStreakLength)
+        while (count < winStreakLength)
         {
             bool isSuccess = this.AskQuestion();
             if (isSuccess)
             {
-                this.count++;
+                count++;
             } else
             {
                 Console.WriteLine($"Let's try again, {name}!");
-                break;
+                return;
             }
         }
 
-        if (this.count == this.winStreakLength)
-        {
-            Console.WriteLine($"Congratulations, {name}!");
-        }
+        Console.WriteLine($"Congratulations, {name}!");
 
     }
 
     private bool AskQuestion()
     {
-        int number = this.getRandomNumber();
+        int number = this.GetRandomNumber();
         bool isEven = IsEven(number);
         string rightAnswer = isEven ? "yes" : "no";
 
